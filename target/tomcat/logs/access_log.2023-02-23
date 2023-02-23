@@ -1,0 +1,13 @@
+0:0:0:0:0:0:0:1 - - [23/Feb/2023:18:10:42 -0500] "GET / HTTP/1.1" 200 57 http-bio-8080-exec-1 555
+0:0:0:0:0:0:0:1 - - [23/Feb/2023:18:10:42 -0500] "GET /favicon.ico HTTP/1.1" 404 973 http-bio-8080-exec-2 5
+0:0:0:0:0:0:0:1 - - [23/Feb/2023:18:11:00 -0500] "GET / HTTP/1.1" 200 57 http-bio-8080-exec-3 3
+0:0:0:0:0:0:0:1 - - [23/Feb/2023:18:11:00 -0500] "GET / HTTP/1.1" 200 57 http-bio-8080-exec-4 1
+0:0:0:0:0:0:0:1 - - [23/Feb/2023:18:11:00 -0500] "GET / HTTP/1.1" 200 57 http-bio-8080-exec-5 0
+0:0:0:0:0:0:0:1 - - [23/Feb/2023:18:11:01 -0500] "GET / HTTP/1.1" 200 57 http-bio-8080-exec-6 1
+0:0:0:0:0:0:0:1 - - [23/Feb/2023:18:11:13 -0500] "GET / HTTP/1.1" 200 52 http-bio-8080-exec-7 40
+0:0:0:0:0:0:0:1 - - [23/Feb/2023:18:18:53 -0500] "GET / HTTP/1.1" 200 57 http-bio-8080-exec-1 503
+0:0:0:0:0:0:0:1 - - [23/Feb/2023:18:19:12 -0500] "GET /helloSerlet HTTP/1.1" 404 973 http-bio-8080-exec-2 3
+0:0:0:0:0:0:0:1 - - [23/Feb/2023:18:19:45 -0500] "GET /helloServlet HTTP/1.1" 200 16 http-bio-8080-exec-3 4
+0:0:0:0:0:0:0:1 - - [23/Feb/2023:18:20:33 -0500] "GET /helloServlet?=_Sebastian HTTP/1.1" 200 16 http-bio-8080-exec-4 4
+0:0:0:0:0:0:0:1 - - [23/Feb/2023:18:20:39 -0500] "GET /helloServlet?=Sebastian HTTP/1.1" 200 16 http-bio-8080-exec-5 1
+0:0:0:0:0:0:0:1 - - [23/Feb/2023:18:20:45 -0500] "GET /helloServlet?name=_Sebastian HTTP/1.1" 200 27 http-bio-8080-exec-6 1
