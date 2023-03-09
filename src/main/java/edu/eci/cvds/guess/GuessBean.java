@@ -1,5 +1,6 @@
 package edu.eci.cvds.guess;
 
+import java.util.ArrayList;
 import java.util.jar.Attributes.Name;
 
 import javax.faces.bean.ApplicationScoped;
@@ -15,6 +16,7 @@ public class GuessBean {
     private int prize;
     private String state;
     private int guessNumber;
+    private ArrayList<Integer> numberList = new ArrayList<>();
 
 
     public GuessBean() {
@@ -44,6 +46,10 @@ public class GuessBean {
         return state;
     }
 
+    public ArrayList<Integer> getNumberList(){
+        return numberList;
+    }
+
     public void setNumber(int number){
         this.number=number;
     }
@@ -67,14 +73,17 @@ public class GuessBean {
 
         }
         else if(!getState().equals("Loser")){
+            numberList.add(guessNumber);
             setTrys(getTrys()+1);
             setPrize(getPrize()-10000);
             if(getPrize()<1){
                 setState("Loser");
             }
+            
         }
     }
     public void restart(){
+        numberList.clear();
         setPrize(100000);
         setTrys(0);
         setState("Playing");

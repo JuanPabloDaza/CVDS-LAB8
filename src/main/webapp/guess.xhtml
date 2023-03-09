@@ -24,6 +24,14 @@ xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
         <br></br>
         <p:outputLabel class="prize" value="#{guessBean.prize}"/>
         <br></br>
+        <h:dataTable value="#{guessBean.numberList}"
+                    var="datos"  style="width: 600px;"
+                    rendered="#{guessBean.numberList.size()>0}">
+                <h:column>
+                    <h:outputLabel value="#{datos}"/>
+                </h:column>
+        </h:dataTable>
+        <br></br>
         <p:commandButton value="Submit" update="guess_form" actionListener="#{guessBean.guess()}"></p:commandButton>
         <p:commandButton value="Reset" update="guess_form" actionListener="#{guessBean.restart()}"></p:commandButton>
     </h:form>
