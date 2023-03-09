@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 
 <html>
+    <script>
+    function validateForm() {
+        let x = document.forms["formid"]["id"].value;
+        if (x == "") {
+        alert("Name must be filled out");
+        return false;
+        }
+    }
+    </script>
     <head>
         <title>Start Page</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -8,10 +17,11 @@
     <body>
         <div class="form1">
             <form id="formid" action="/holaJuan" method="get" onsubmit="return validateForm()">
-                <label for="id">Enter a number: </label>
+                <label for="id">Enter a Number: </label>
                 <input type="text" name="id" placeholder="Number">
+                <button type="submit" >Submit</button>
             </form>
         </div>  
-        <button type="submit" form="formid">Submit</button>
+        
     </body>
 </html>

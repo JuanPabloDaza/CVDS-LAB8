@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3c.org/1999/xhtml"
+xmlns:h="http://java.sun.com/jsf/html"
+xmlns:p="http://primefaces.org/ui"
+xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
+<style>
+    .number{
+        display: none;
+    }
+
+</style>
+ <h:head>
+ </h:head>
+ <h:body>
+    <h:form id="guess_form">
+        <p:outputLabel class="number" value="#{guessBean.getNumber()}"/>
+        <p:inputText class="guessNumber" value="#{guessBean.guessNumber}"/>
+        <p:outputlabel class="trys" value="#{guessBean.trys}"/>
+        <p:outputlabel class="state" value="#{guessBean.state}"/>
+        <p:outputlabel class="prize" value="#{guessBean.price}"/>
+        <p:commandButton value="Submit" update="gues_form" actionListener="#{guessBean.guess}">Guess</p:commandButton>
+        <p:commandButton value="Submit" update="gues_form" actionListener="#{guessBean.restart()}">Reset</p:commandButton>
+
+    </h:form>
+ </h:body>
+</html>
