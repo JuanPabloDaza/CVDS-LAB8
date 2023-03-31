@@ -1,8 +1,0 @@
-edu\eci\cvds\guess\GuessBean.class
-edu\eci\cvds\DataService.class
-edu\eci\cvds\Main.class
-edu\eci\cvds\servlet\model\Todo.class
-edu\eci\cvds\servlet\SampleServlet.class
-edu\eci\cvds\LineChartBean.class
-edu\eci\cvds\servlet\EjercicioServlet.class
-edu\eci\cvds\servlet\Service.class
