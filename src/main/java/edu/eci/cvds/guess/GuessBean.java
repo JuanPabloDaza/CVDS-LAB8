@@ -1,28 +1,33 @@
 package edu.eci.cvds.guess;
 
+import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.jar.Attributes.Name;
-
-import javax.faces.bean.ApplicationScoped;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
+
+import edu.eci.cvds.service.ConfigurationService;
+
 @Component
 @ManagedBean(name = "guessBean")
 @SessionScoped
 
-public class GuessBean {
+public class GuessBean implements Serializable{
+
+    ConfigurationService configurationService;
     private int number;
     private int trys;
     private int prize;
     private String state;
     private int guessNumber;
     private ArrayList<Integer> numberList = new ArrayList<>();
-
-
+    
     public GuessBean() {
-        prize=100000;
+        
         trys=0;
         state="Playing";
         number=(int)((Math.random()*(10-1))+1);
@@ -84,6 +89,16 @@ public class GuessBean {
             
         }
     }
+
+    @Bean
+    public CommandLineRunner premio(){
+        return args -> {
+            configurationService.addConfiguration(new Configuration("Premio","100"));
+            configurationService.getAllConfigurations().forEach(configuration -> System.out.println(configuration));
+            prize = Integer.valueOf(configurationService.getAllConfigurations().get(0).getValor());
+        };
+    }
+
     public void restart(){
         numberList.clear();
         setPrize(100000);
