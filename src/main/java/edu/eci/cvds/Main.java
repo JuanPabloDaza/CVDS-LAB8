@@ -12,7 +12,7 @@ import javax.servlet.ServletContext;
 import java.util.Arrays;
 
 @SpringBootApplication
-@ComponentScan(basePackages = {"edu.ecci.cvds.guess","edu.eci.cvds.repository","edu.eci.cvds.service"})
+@ComponentScan(basePackages = {"edu.ecci.cvds.guess","edu.eci.cvds.repository","edu.eci.cvds.service","edu.eci.cvds.user"})
 @EnableJpaRepositories(basePackages = "edu.eci.cvds.repository")
 public class Main{
 
