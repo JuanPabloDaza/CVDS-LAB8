@@ -2,17 +2,18 @@ package edu.eci.cvds;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 import javax.faces.webapp.FacesServlet;
 import javax.servlet.ServletContext;
 import java.util.Arrays;
 
-@SpringBootApplication(exclude = {DataSourceAutoConfiguration.class})
-@ComponentScan
+@SpringBootApplication
+@ComponentScan(basePackages = {"edu.ecci.cvds.guess","edu.eci.cvds.repository","edu.eci.cvds.service"})
+@EnableJpaRepositories(basePackages = "edu.eci.cvds.repository")
 public class Main{
 
   public static void main (String[] args) {

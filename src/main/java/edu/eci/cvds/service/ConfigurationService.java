@@ -1,11 +1,8 @@
 package edu.eci.cvds.service;
 
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
-
 import edu.eci.cvds.guess.Configuration;
 import edu.eci.cvds.repository.ConfigurationRepository;
 
@@ -15,7 +12,7 @@ public class ConfigurationService {
     
 	private final ConfigurationRepository configurationRepository;
         
-        
+        @Autowired
         public ConfigurationService(ConfigurationRepository configurationRepository) {
             this.configurationRepository = configurationRepository;
         }
